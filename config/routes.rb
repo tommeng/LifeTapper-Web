@@ -1,11 +1,12 @@
 LifeTapperWeb::Application.routes.draw do
-  resources :life_events
+  get "welcome/index"
+  devise_for :users
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  root 'welcome#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
