@@ -1,4 +1,10 @@
 LifeTapperWeb::Application.routes.draw do
+  resources :sessions
+
+  resources :counts
+
+  resources :activities
+
   get "welcome/index"
   devise_for :users
 
