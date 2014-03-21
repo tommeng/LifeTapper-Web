@@ -1,3 +1,35 @@
 // Place all the styles related to the Welcome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#heading {
+  width: 100%;
+  height: 380px;
+  padding: 20px 0;
+  background: url('welcome_header.jpg') no-repeat fixed;
+  position: relative;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  -webkit-box-shadow: inset 0 -4px 9px -3px #000;
+  -moz-box-shadow: inset 0 -4px 9px -3px #000;
+  box-shadow: inset 0 -4px 9px -3px #000;
+}
+#heading h1, #heading h2, #heading h3, #heading h4, #heading h5, #heading p {
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6), 0 0 30px rgba(0,0,0,0.25);
+}
+
+#heading h1 {
+  font-size: 90px;
+  line-height: 105px;
+  letter-spacing: -1px;
+  color: #fff;
+}
+
+#heading h4 {
+  font-size: 30px;
+  line-height: 40px;
+  color: #fff;
+  margin-bottom: 25px;
+}
