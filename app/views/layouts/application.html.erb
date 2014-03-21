@@ -8,18 +8,25 @@
 </head>
 <body style="padding-top:40px">
 
-  <%= nav_bar :fixed => :top, :brand => "LifeTapper", :responsive => true do %>
-  <%= menu_group do %>
-  <%= menu_item "Home", root_path %>
-  <%= menu_item "Activities", activities_path %>
-  <%= menu_item "Counts", counts_path %>
-  <%= menu_item "Sessions", sessions_path %>
-  <% end %>
-  <%= menu_group :pull => :right do %>
-  <%= menu_item "Sign up", new_user_registration_path %>
-  <%= menu_item "Log in", new_user_session_path %>
-  <% end %>
-  <% end %>
+<%= nav_bar :fixed => :top, :brand => "LifeTapper", :responsive => true do %>
+    <%= menu_group do %>
+        <%= menu_item "Home", root_path %>
+        <% if current_user %>
+            <%= menu_item "Activities", activities_path %>
+            <%= menu_item "Counts", counts_path %>
+            <%= menu_item "Sessions", sessions_path %>
+        <% end %>
+    <% end %>
+
+    <%= menu_group :pull => :right do %>
+        <% if current_user %>
+            <%= menu_item "Log out", destroy_user_session_path, method: :delete %>
+        <% else %>
+            <%= menu_item "Sign up", new_user_registration_path %>
+            <%= menu_item "Log in", new_user_session_path %>
+        <% end %>
+    <% end %>
+<% end %>
 
   <% if notice %>
   <p class="alert alert-notice"><%= notice %></p>
