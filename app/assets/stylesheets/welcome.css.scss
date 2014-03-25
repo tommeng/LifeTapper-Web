@@ -16,6 +16,7 @@
   -moz-box-shadow: inset 0 -4px 9px -3px #000;
   box-shadow: inset 0 -4px 9px -3px #000;
 }
+
 #heading h1, #heading h2, #heading h3, #heading h4, #heading h5, #heading p {
   text-shadow: 0 1px 3px rgba(0,0,0,0.6), 0 0 30px rgba(0,0,0,0.25);
 }
@@ -32,4 +33,52 @@
   line-height: 40px;
   color: #fff;
   margin-bottom: 25px;
+}
+
+#white-section-container {
+  background: white;
+  font-size: 18pt;
+  font-weight:300;
+  font-family: 'Roboto', sans-serif;
+  line-height:130%;
+}
+
+#white-section-container h1{
+  font-size: 45pt;
+  font-weight:normal;
+  font-family: 'Roboto', sans-serif;
+}
+
+#white-section-container p{
+  font-size: 18pt;
+  font-weight:300;
+  font-family: 'Roboto', sans-serif;
+  line-height:130%;
+}
+
+#life-section-container {
+  background: url('house_bg.jpg') no-repeat fixed;
+  font-size: 18pt;
+  font-weight:300;
+  font-family: 'Roboto', sans-serif;
+  color:white;
+  line-height:130%;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6), 0 0 30px rgba(0,0,0,0.25);
+}
+
+#life-section-container h1{
+  font-size: 45pt;
+  font-weight:normal;
+  font-family: 'Roboto', sans-serif;
+  color:white;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6), 0 0 30px rgba(0,0,0,0.25);
+}
+
+#life-section-container p{
+  font-size: 18pt;
+  font-weight:300;
+  font-family: 'Roboto', sans-serif;
+  color:white;
+  line-height:130%;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6), 0 0 30px rgba(0,0,0,0.25);
 }
