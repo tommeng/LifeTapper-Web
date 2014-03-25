@@ -41,6 +41,8 @@
   font-weight:300;
   font-family: 'Roboto', sans-serif;
   line-height:130%;
+  padding-top: 50px;
+  padding-bottom: 50px
 }
 
 #white-section-container h1{
@@ -75,6 +77,35 @@
 }
 
 #life-section-container p{
+  font-size: 18pt;
+  font-weight:300;
+  font-family: 'Roboto', sans-serif;
+  color:white;
+  line-height:130%;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6), 0 0 30px rgba(0,0,0,0.25);
+}
+
+#join-section-container {
+  background: url('nature_bg.jpg') fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-size: 18pt;
+  font-weight:300;
+  font-family: 'Roboto', sans-serif;
+  color:white;
+  line-height:130%;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6), 0 0 30px rgba(0,0,0,0.25);
+}
+
+#join-section-container h1{
+  font-size: 45pt;
+  font-weight:normal;
+  font-family: 'Roboto', sans-serif;
+  color:white;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6), 0 0 30px rgba(0,0,0,0.25);
+}
+
+#join-section-container p{
   font-size: 18pt;
   font-weight:300;
   font-family: 'Roboto', sans-serif;
