@@ -2,23 +2,25 @@
 <div class="page-header">
   <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
 </div>
-<table class="table table-striped">
+<table class="table table-hover">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
-      <th><%= model_class.human_attribute_name(:user_id) %></th>
       <th><%= model_class.human_attribute_name(:name) %></th>
       <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%= model_class.human_attribute_name(:type) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
   <tbody>
     <% @activities.each do |activity| %>
-      <tr>
-        <td><%= link_to activity.id, activity_path(activity) %></td>
-        <td><%= activity.user_id %></td>
+      <tr data-link="<%= activity_path(activity) %>">
         <td><%= activity.name %></td>
         <td><%=l activity.created_at %></td>
+        <% if activity.is_count %>
+          <td>Count</td>
+        <% else %>
+          <td>Session</td>
+        <% end %>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_activity_path(activity), :class => 'btn btn-mini' %>
