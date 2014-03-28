@@ -1,7 +1,7 @@
 class CreateSessions < ActiveRecord::Migration
   def change
     create_table :sessions do |t|
-      t.integer :activity_id
+      t.belongs_to :activity
       t.datetime :start_date
       t.datetime :end_date
 

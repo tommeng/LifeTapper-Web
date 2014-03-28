@@ -13,14 +13,13 @@
     <%= menu_group do %>
         <%= menu_item "Home", root_path %>
         <% if current_user %>
-            <%= menu_item "Activities", activities_path %>
-            <%= menu_item "Counts", counts_path %>
-            <%= menu_item "Sessions", sessions_path %>
+            <%= menu_item "Your Activities", activities_path %>
         <% end %>
     <% end %>
 
     <%= menu_group :pull => :right do %>
         <% if current_user %>
+        <%= menu_item "New Activity", new_activity_path %>
             <%= menu_item "Log out", destroy_user_session_path, method: :delete %>
         <% else %>
             <%= menu_item "Sign up", new_user_registration_path %>

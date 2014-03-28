@@ -1,7 +1,7 @@
 class CreateCounts < ActiveRecord::Migration
   def change
     create_table :counts do |t|
-      t.integer :activity_id
+      t.belongs_to :activity
       t.datetime :date
 
       t.timestamps
