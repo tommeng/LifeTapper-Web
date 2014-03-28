@@ -1,7 +1,12 @@
 <%- model_class = Activity -%>
-<div class="page-header">
-  <div style="margin-left:75px">
-    <h1><%=t '.title', :default => [:'helpers.titles.new', 'New %{model}'], :model => model_class.model_name.human.titleize %></h1>
+<div id="page-container">
+  <div id="dark-container">
+    <div id="form-container" class="span6 text-center offset4" style="margin-top:125px">
+      <h1>Add A New Activity</h1>
+
+      <div style="margin-top: 25px">
+        <%= render :partial => 'form' %>
+      </div>
+    </div>
   </div>
 </div>
-<%= render :partial => 'form' %>

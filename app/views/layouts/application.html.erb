@@ -2,12 +2,11 @@
 <html>
 <head>
   <link href='http://fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
-  <title>LifeTapperWeb</title>
+  <title>LifeTapper</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
-<body style="padding-top:40px">
 
 <%= nav_bar :fixed => :top, :brand => "LifeTapper", :brand_link => root_url do %>
     <%= menu_group do %>
@@ -34,6 +33,7 @@
   <p class="alert alert-error"><%= alert %></p>
   <% end %>
 
+<body style="padding-top:30px">
   <%= yield %>
 </body>
 </html>
