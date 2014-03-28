@@ -9,9 +9,8 @@
 </head>
 <body style="padding-top:40px">
 
-<%= nav_bar :fixed => :top, :brand => "LifeTapper", :responsive => true do %>
+<%= nav_bar :fixed => :top, :brand => "LifeTapper", :brand_link => root_url do %>
     <%= menu_group do %>
-        <%= menu_item "Home", root_path %>
         <% if current_user %>
             <%= menu_item "Your Activities", activities_path %>
         <% end %>
