@@ -1,10 +1,12 @@
 class SessionsController < ApplicationController
+  before_filter :authenticate_user!
   before_action :set_session, only: [:show, :edit, :update, :destroy]
 
   # GET /sessions
   # GET /sessions.json
   def index
-    @sessions = Session.all
+    activity_id = flash[:activity]
+    @sessions = Session.find(:all, :conditions => { :activity_id => activity_id })
   end
 
   # GET /sessions/1
