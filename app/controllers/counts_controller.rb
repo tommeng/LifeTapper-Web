@@ -1,10 +1,12 @@
 class CountsController < ApplicationController
+  before_filter :authenticate_user!
   before_action :set_count, only: [:show, :edit, :update, :destroy]
 
   # GET /counts
   # GET /counts.json
   def index
-    @counts = Count.all
+    activity_id = flash[:activity]
+    @counts = Count.find(:all, :conditions => { :activity_id => activity_id })
   end
 
   # GET /counts/1
