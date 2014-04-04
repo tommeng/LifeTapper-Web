@@ -5,6 +5,20 @@
       <div id="form-container" class="span4 offset5" style="margin-top:125px">
         <h1>Add A New Activity</h1>
 
+        <% if @activity.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@activity.errors.count, "error") %> prohibited this activity from being saved:</h2>
+
+          <div style="color:black">
+            <ul>
+              <% @activity.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+        <% end %>
+
         <div style="margin-top: 25px">
           <%= render :partial => 'form' %>
         </div>

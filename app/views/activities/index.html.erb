@@ -16,7 +16,7 @@
           <% if current_user == activity.user %>
             <tr data-link="<%= activity_path(activity) %>">
               <td><%= activity.name %></td>
-              <td><%= activity.created_at.strftime('%b-%d-%Y %l:%M %p') %></td>
+              <td><%= activity.created_at.in_time_zone(Time.zone.name).strftime('%b-%d-%Y %l:%M %p') %></td>
               <% if activity.is_count %>
                 <td>Count</td>
               <% else %>
