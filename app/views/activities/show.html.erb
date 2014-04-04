@@ -1,18 +1,27 @@
 <%- model_class = Activity -%>
 <div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+  <h1 style="padding-top:50px; padding-bottom:20px"><%=t '.title', :default => @activity.name.titleize %></h1>
 </div>
 
 <dl class="dl-horizontal">
-  <dt><strong><%= model_class.human_attribute_name(:user_id) %>:</strong></dt>
-  <dd><%= @activity.user_id %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
-  <dd><%= @activity.name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:type) %>:</strong></dt>
+  <% if @activity.is_count %>
+    <dd>Count</dd>
+  <% else %>
+    <dd>Session</dd>
+  <% end %>
 </dl>
 
 <div class="form-actions">
+  <% if @activity.is_count %>
+    <%= link_to t('.new', :default => t("helpers.links.new")),
+                new_count_path(:activity => @activity.id), :class => 'btn' %>
+  <% else %>
+    <%= link_to t('.new', :default => t("helpers.links.new")),
+                new_session_path(:activity => @activity.id), :class => 'btn' %>
+  <% end %>
   <%= link_to t('.back', :default => t("helpers.links.back")),
-              activities_path, :class => 'btn'  %>
+              activities_path, :class => 'btn' %>
   <%= link_to t('.edit', :default => t("helpers.links.edit")),
               edit_activity_path(@activity), :class => 'btn' %>
   <%= link_to t('.destroy', :default => t("helpers.links.destroy")),

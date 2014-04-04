@@ -17,8 +17,10 @@ class CountsController < ApplicationController
   # GET /counts/new
   def new
     @count = Count.new
+    @activity = Activity.find(params[:activity])
 
     @count.date = Time.now
+    @count.activity = @activity
   end
 
   # GET /counts/1/edit

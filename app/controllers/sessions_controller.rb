@@ -17,9 +17,11 @@ class SessionsController < ApplicationController
   # GET /sessions/new
   def new
     @session = Session.new
+    @activity = Activity.find(params[:activity])
 
     @session.start_date = Time.now
     @session.end_date = Time.now
+    @session.activity = @activity
   end
 
   # GET /sessions/1/edit
