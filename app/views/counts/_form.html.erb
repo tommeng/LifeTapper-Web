@@ -6,7 +6,6 @@
   </div>
 </div>
 <div class="control-group">
-  <%= f.label :date, :class => 'control-label' %>
   <div class="controls">
     <%= f.input :date, :as => :datetime_picker %>
     <script>
@@ -19,9 +18,7 @@
   </div>
 </div>
 
-<div class="form-actions">
-  <%= f.submit nil, :class => 'btn btn-primary' %>
-  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-  counts_path, :class => 'btn' %>
-</div>
+<%= f.submit nil, :class => 'btn btn-primary' %>
+<%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+activities_path, :class => 'btn' %>
 <% end %>

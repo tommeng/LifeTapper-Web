@@ -1,25 +1,33 @@
 <%- model_class = Session -%>
-<div class="page-header">
-  <h1 style="padding-top:50px; padding-bottom:20px"><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
-</div>
+<div id="show-session-page-container">
+  <div id="dark-container">
+    <div class="row-fluid">
+      <div id="form-container" class="span4 offset5" style="margin-top:125px">
+        <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
 
-<dl class="dl-horizontal">
-  <dt><strong><%= model_class.human_attribute_name(:activity_id) %>:</strong></dt>
-  <dd><%= @session.activity_id %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:start_date) %>:</strong></dt>
-  <dd><%= @session.start_date %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:end_date) %>:</strong></dt>
-  <dd><%= @session.end_date %></dd>
-</dl>
+        <div style="margin-top:25px">
+          <strong><%= model_class.human_attribute_name(:activity_id) %>:</strong>
+          <%= @session.activity_id %>
+        </div>
+        <div style="margin-top:25px">
+          <strong><%= model_class.human_attribute_name(:start_date) %>:</strong>
+          <%= @session.start_date.strftime('%b-%d-%Y %l:%M %p')  %>
+        </div>
+        <div style="margin-top:25px; margin-bottom:50px">
+          <strong><%= model_class.human_attribute_name(:end_date) %>:</strong>
+          <%= @session.end_date.strftime('%b-%d-%Y %l:%M %p')  %>
+        </div>
 
-<div class="form-actions">
-  <%= link_to t('.back', :default => t("helpers.links.back")),
-              sessions_path, :class => 'btn'  %>
-  <%= link_to t('.edit', :default => t("helpers.links.edit")),
-              edit_session_path(@session), :class => 'btn' %>
-  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-              session_path(@session),
-              :method => 'delete',
-              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-              :class => 'btn btn-danger' %>
+        <%= link_to t('.back', :default => t("helpers.links.back")),
+        sessions_path, :class => 'btn'  %>
+        <%= link_to t('.edit', :default => t("helpers.links.edit")),
+        edit_session_path(@session), :class => 'btn' %>
+        <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+        session_path(@session),
+        :method => 'delete',
+        :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+        :class => 'btn btn-danger' %>
+      </div>
+    </div>
+  </div>
 </div>

@@ -1,26 +1,28 @@
-<%= form_for @session, :html => { :class => 'form-horizontal' } do |f| %>
-  <div class="control-group">
-    <%= f.label :activity_id, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :activity_id, :class => 'text_field' %>
-    </div>
+<%= simple_form_for @session do |f| %>
+<div class="control-group">
+  <%= f.label :activity_id, :class => 'control-label' %>
+  <div class="controls">
+    <%= f.text_field :activity_id, :class => 'text_field' %>
   </div>
-  <div class="control-group">
-    <%= f.label :start_date, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :start_date, :class => 'text_field' %>
-    </div>
+</div>
+<div class="control-group">
+  <div class="controls">
+    <%= f.input :start_date, :as => :datetime_picker %>
   </div>
-  <div class="control-group">
-    <%= f.label :end_date, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :end_date, :class => 'text_field' %>
-    </div>
+</div>
+<div class="control-group">
+  <div class="controls">
+    <%= f.input :end_date, :as => :datetime_picker %>
   </div>
+</div>
 
-  <div class="form-actions">
-    <%= f.submit nil, :class => 'btn btn-primary' %>
-    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                sessions_path, :class => 'btn' %>
-  </div>
+<%= f.submit nil, :class => 'btn btn-primary' %>
+<%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+activities_path, :class => 'btn' %>
 <% end %>
+<script>
+$('.datetimepicker').datetimepicker({
+  pickSeconds: false,
+  pick12HourFormat: true
+});
+</script>

@@ -32,10 +32,11 @@ class SessionsController < ApplicationController
   # POST /sessions.json
   def create
     @session = Session.new(session_params)
+    @activity = Activity.find(@session.activity_id)
 
     respond_to do |format|
       if @session.save
-        format.html { redirect_to @session, notice: 'Session was successfully created.' }
+        format.html { redirect_to @activity, notice: 'Session was successfully created.' }
         format.json { render action: 'show', status: :created, location: @session }
       else
         format.html { render action: 'new' }
@@ -47,9 +48,11 @@ class SessionsController < ApplicationController
   # PATCH/PUT /sessions/1
   # PATCH/PUT /sessions/1.json
   def update
+    @activity = Activity.find(@session.activity_id)
+
     respond_to do |format|
       if @session.update(session_params)
-        format.html { redirect_to @session, notice: 'Session was successfully updated.' }
+        format.html { redirect_to @activity, notice: 'Session was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -61,9 +64,10 @@ class SessionsController < ApplicationController
   # DELETE /sessions/1
   # DELETE /sessions/1.json
   def destroy
+    @activity = Activity.find(@session.activity_id)
     @session.destroy
     respond_to do |format|
-      format.html { redirect_to sessions_url }
+      format.html { redirect_to @activity }
       format.json { head :no_content }
     end
   end

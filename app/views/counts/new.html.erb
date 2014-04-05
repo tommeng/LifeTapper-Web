@@ -1,5 +1,14 @@
 <%- model_class = Count -%>
-<div class="page-header">
-  <h1 style="padding-top:50px; padding-bottom:20px"><%=t '.title', :default => [:'helpers.titles.new', 'New %{model}'], :model => model_class.model_name.human.titleize %></h1>
+<div id="add-count-page-container">
+  <div id="dark-container">
+    <div class="row-fluid">
+      <div id="form-container" class="span4 offset5" style="margin-top:125px">
+        <h1>Add A New Count</h1>
+
+        <div style="margin-top: 25px">
+          <%= render :partial => 'form' %>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-<%= render :partial => 'form' %>

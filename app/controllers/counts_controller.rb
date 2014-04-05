@@ -31,10 +31,11 @@ class CountsController < ApplicationController
   # POST /counts.json
   def create
     @count = Count.new(count_params)
+    @activity = Activity.find(@count.activity_id)
 
     respond_to do |format|
       if @count.save
-        format.html { redirect_to @count, notice: 'Count was successfully created.' }
+        format.html { redirect_to @activity, notice: 'Count was successfully created.' }
         format.json { render action: 'show', status: :created, location: @count }
       else
         format.html { render action: 'new' }
@@ -46,9 +47,10 @@ class CountsController < ApplicationController
   # PATCH/PUT /counts/1
   # PATCH/PUT /counts/1.json
   def update
+    @activity = Activity.find(@count.activity_id)
     respond_to do |format|
       if @count.update(count_params)
-        format.html { redirect_to @count, notice: 'Count was successfully updated.' }
+        format.html { redirect_to @activity, notice: 'Count was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -60,9 +62,10 @@ class CountsController < ApplicationController
   # DELETE /counts/1
   # DELETE /counts/1.json
   def destroy
+    @activity = Activity.find(@count.activity_id)
     @count.destroy
     respond_to do |format|
-      format.html { redirect_to counts_url }
+      format.html { redirect_to @activity }
       format.json { head :no_content }
     end
   end
