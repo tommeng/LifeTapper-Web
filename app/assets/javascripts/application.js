@@ -19,3 +19,7 @@
 //= require skrollr.ie
 //= require skrollr.menu
 //= require turbolinks
+//= require bootstrap-datetimepicker
+//= require bootstrap-datetimepicker/core
+//= require bootstrap-datetimepicker/pickers
+//= require bootstrap-datetimepicker/locales/bootstrap-datetimepicker.hu.js

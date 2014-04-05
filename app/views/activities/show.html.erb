@@ -15,7 +15,7 @@
 <table class="table table-hover">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%= model_class.human_attribute_name(:counts) %></th>
     </tr>
   </thead>
   <tbody>
@@ -23,7 +23,7 @@
       <% @activity.counts.each do |count| %>
         <% if current_user == @activity.user %>
           <tr data-link="<%= count_path(count) %>">
-            <td><%= count.created_at.in_time_zone(Time.zone.name).strftime('%b-%d-%Y %l:%M %p') %></td>
+            <td><%= count.date.in_time_zone(Time.zone.name).strftime('%b-%d-%Y %l:%M %p') %></td>
           </tr>
         <% end %>
       <% end %>
@@ -31,7 +31,7 @@
       <% @activity.sessions.each do |session| %>
         <% if current_user == @activity.user %>
           <tr data-link="<%= session_path(session) %>">
-            <td><%= count.created_at.in_time_zone(Time.zone.name).strftime('%b-%d-%Y %l:%M %p') %></td>
+            <td><%= count.date.in_time_zone(Time.zone.name).strftime('%b-%d-%Y %l:%M %p') %></td>
           </tr>
         <% end %>
       <% end %>

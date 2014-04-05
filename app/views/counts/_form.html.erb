@@ -1,20 +1,27 @@
-<%= form_for @count, :html => { :class => 'form-horizontal' } do |f| %>
-  <div class="control-group">
-    <%= f.label :activity_id, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :activity_id, :class => 'text_field' %>
-    </div>
+<%= simple_form_for @count do |f| %>
+<div class="control-group">
+  <%= f.label :activity_id, :class => 'control-label' %>
+  <div class="controls">
+    <%= f.text_field :activity_id, :class => 'text_field' %>
   </div>
-  <div class="control-group">
-    <%= f.label :date, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :date, :class => 'text_field' %>
-    </div>
+</div>
+<div class="control-group">
+  <%= f.label :date, :class => 'control-label' %>
+  <div class="controls">
+    <%= f.input :date, :as => :datetime_picker %>
+    <script>
+    $('.datetimepicker').datetimepicker({
+      pickSeconds: false,
+      language: 'en',
+      pick12HourFormat: true
+    });
+    </script>
   </div>
+</div>
 
-  <div class="form-actions">
-    <%= f.submit nil, :class => 'btn btn-primary' %>
-    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                counts_path, :class => 'btn' %>
-  </div>
+<div class="form-actions">
+  <%= f.submit nil, :class => 'btn btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+  counts_path, :class => 'btn' %>
+</div>
 <% end %>

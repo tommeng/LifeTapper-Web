@@ -1,3 +1,9 @@
+GIT
+  remote: git://github.com/zpaulovics/datetimepicker-rails.git
+  revision: f0316e55d6a46794e56d5e636ea838c9eaef34cb
+  specs:
+    datetimepicker-rails (0.0.8)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -100,6 +106,9 @@ GEM
     sdoc (0.4.0)
       json (~> 1.8)
       rdoc (~> 4.0, < 5.0)
+    simple_form (3.0.1)
+      actionpack (>= 4.0.0, < 4.1)
+      activemodel (>= 4.0.0, < 4.1)
     skrollr-rails (0.6.21)
       rails (>= 3.1.0)
     sprockets (2.11.0)
@@ -141,6 +150,7 @@ PLATFORMS
 
 DEPENDENCIES
   coffee-rails (~> 4.0.0)
+  datetimepicker-rails!
   devise
   jbuilder (~> 1.2)
   jquery-rails
@@ -150,6 +160,7 @@ DEPENDENCIES
   rails (= 4.0.3)
   sass-rails (~> 4.0.0)
   sdoc
+  simple_form
   skrollr-rails
   sqlite3
   therubyracer
