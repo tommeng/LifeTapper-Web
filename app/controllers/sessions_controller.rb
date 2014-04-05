@@ -21,7 +21,7 @@ class SessionsController < ApplicationController
 
     @session.start_date = Time.now
     @session.end_date = Time.now
-    @session.activity = @activity
+    @session.activity_id = @activity.id
   end
 
   # GET /sessions/1/edit

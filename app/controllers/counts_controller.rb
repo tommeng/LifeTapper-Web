@@ -20,7 +20,7 @@ class CountsController < ApplicationController
     @activity = Activity.find(params[:activity])
 
     @count.date = Time.now
-    @count.activity = @activity
+    @count.activity_id = @activity.id
   end
 
   # GET /counts/1/edit
