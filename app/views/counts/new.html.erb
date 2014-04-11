@@ -6,6 +6,11 @@
         <h1>Add A New Count</h1>
 
         <div style="margin-top: 25px">
+          <h3>Activity's Name</h3>
+          <%= @count.activity.name %>
+        </div>
+
+        <div style="margin-top: 25px">
           <%= render :partial => 'form' %>
         </div>
       </div>

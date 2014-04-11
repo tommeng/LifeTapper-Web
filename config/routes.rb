@@ -6,6 +6,7 @@ LifeTapperWeb::Application.routes.draw do
   resources :activities
 
   get "welcome/index"
+
   devise_for :users
 
   devise_scope :user do

@@ -4,7 +4,15 @@
     <div class="row-fluid">
       <div id="form-container" class="span4 offset5" style="margin-top:125px">
         <h1><%=t '.title', :default => [:'helpers.titles.new', 'New %{model}'], :model => model_class.model_name.human.titleize %></h1>
-        <%= render :partial => 'form' %>
+
+        <div style="margin-top: 25px">
+          <h3>Activity's Name</h3>
+          <%= @session.activity.name %>
+        </div>
+
+        <div style="margin-top: 25px">
+          <%= render :partial => 'form' %>
+        </div>
       </div>
     </div>
   </div>
