@@ -19,7 +19,7 @@
         </div>
 
         <%= link_to t('.back', :default => t("helpers.links.back")),
-        sessions_path, :class => 'btn'  %>
+        @session.activity, :class => 'btn'  %>
         <%= link_to t('.edit', :default => t("helpers.links.edit")),
         edit_session_path(@session), :class => 'btn' %>
         <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
