@@ -8,5 +8,4 @@ class Activity < ActiveRecord::Base
   validates :name, format: { with: /\A[a-zA-Z0-9_]*[a-z A-Z][a-zA-Z0-9_]+\z/,
     message: "only allows letters, numbers and spaces" }
 
-    validates :name, uniqueness: true
   end
