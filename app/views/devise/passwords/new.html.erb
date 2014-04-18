@@ -2,6 +2,10 @@
   <div id="dark-container" class="text-center">
     <h1 style="padding-top:125px">Forgot your password?</h1>
 
+    <p>
+      We will send you an email with instructions to reset your password.
+    </p>
+
     <%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f| %>
     <%= devise_error_messages! %>
 

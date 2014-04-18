@@ -7,7 +7,7 @@ LifeTapperWeb::Application.routes.draw do
 
   get "welcome/index"
 
-  devise_for :users
+  devise_for :users, :controllers => { :passwords => "passwords" }
 
   devise_scope :user do
     root to: 'welcome#index'
