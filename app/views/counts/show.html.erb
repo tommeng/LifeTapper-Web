@@ -18,7 +18,7 @@
 
         <div style="margin-top:50px">
           <%= link_to t('.back', :default => t("helpers.links.back")),
-          counts_path, :class => 'btn'  %>
+          @count.activity, :class => 'btn'  %>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
           edit_count_path(@count), :class => 'btn' %>
           <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
