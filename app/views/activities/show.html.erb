@@ -2,19 +2,27 @@
 <div id="activity-page-container">
   <div id="dark-container" class="text-center">
     <h1 style="padding-top:50px"><%=t '.title', :default => @activity.name.titleize %></h1>
+    <div style="padding-bottom:10px">
+      <% if @activity.is_count %>
+      <%= model_class.human_attribute_name(:counts) %>
+      <% else %>
+      <%= model_class.human_attribute_name(:sessions) %>
+      <% end %>
+    </div>
     <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
     activity_path(@activity),
     :method => 'delete',
     :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
     :class => 'btn btn-danger' %>
 
-    <table style="margin-top:50px"class="table table-hover" id="activities-table-container">
+    <table style="margin-top:50px;" class="table table-hover" id="activities-table-container">
       <thead>
         <tr>
           <% if @activity.is_count %>
-          <th><%= model_class.human_attribute_name(:counts) %></th>
+          <th><%= model_class.human_attribute_name(:created_at) %></th>
           <% else %>
-          <th><%= model_class.human_attribute_name(:sessions) %></th>
+          <th>Start Time / Date</th>
+          <th>End Time / Date</th>
           <% end %>
         </tr>
       </thead>

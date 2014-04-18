@@ -31,7 +31,7 @@ class CountsController < ApplicationController
   # POST /counts.json
   def create
     @count = Count.new(count_params)
-    @activity = Activity.find(@count.activity_id)
+    @activity = @count.activity
 
     respond_to do |format|
       if @count.save
