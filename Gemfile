@@ -57,9 +57,10 @@ gem "therubyracer"
 gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
 gem "twitter-bootstrap-rails"
 gem 'skrollr-rails'
-# SORRY! But the 'datetimepicker-rails' name in RubyGems repo already taken.
+
 gem 'datetimepicker-rails', :require => 'datetimepicker-rails', :git => 'git://github.com/zpaulovics/datetimepicker-rails.git'
 gem 'simple_form'
+gem 'validates_timeliness', '~> 3.0'
 
 # use devise for authentication
 gem 'devise'

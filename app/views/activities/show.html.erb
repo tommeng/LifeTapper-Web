@@ -19,31 +19,31 @@
       <thead>
         <tr>
           <% if @activity.is_count %>
-          <th><%= model_class.human_attribute_name(:created_at) %></th>
+            <th><%= model_class.human_attribute_name(:created_at) %></th>
           <% else %>
-          <th>Start Time / Date</th>
-          <th>End Time / Date</th>
+            <th>Start Time / Date</th>
+            <th>End Time / Date</th>
           <% end %>
         </tr>
       </thead>
       <tbody>
         <% if @activity.is_count %>
-        <% @activity.counts.each do |count| %>
-        <% if current_user == @activity.user %>
-        <tr data-link="<%= count_path(count) %>">
-          <td><%= count.date.in_time_zone(Time.zone.name).strftime('%b-%d-%Y %l:%M %p') %></td>
-        </tr>
-        <% end %>
-        <% end %>
+          <% @activity.counts.each do |count| %>
+            <% if current_user == @activity.user %>
+              <tr data-link="<%= count_path(count) %>">
+                <td><%= count.date.in_time_zone(Time.zone.name).strftime('%b-%d-%Y %l:%M %p') %></td>
+              </tr>
+            <% end %>
+          <% end %>
         <% else %>
-        <% @activity.sessions.each do |session| %>
-        <% if current_user == @activity.user %>
-        <tr data-link="<%= session_path(session) %>">
-          <td><%= session.start_date.in_time_zone(Time.zone.name).strftime('%b-%d-%Y %l:%M %p') %></td>
-          <td><%= session.end_date.in_time_zone(Time.zone.name).strftime('%b-%d-%Y %l:%M %p') %></td>
-        </tr>
-        <% end %>
-        <% end %>
+          <% @activity.sessions.each do |session| %>
+            <% if current_user == @activity.user %>
+              <tr data-link="<%= session_path(session) %>">
+                <td><%= session.start_date.in_time_zone(Time.zone.name).strftime('%b-%d-%Y %l:%M %p') %></td>
+                <td><%= session.end_date.in_time_zone(Time.zone.name).strftime('%b-%d-%Y %l:%M %p') %></td>
+              </tr>
+            <% end %>
+          <% end %>
         <% end %>
       </tbody>
     </table>
